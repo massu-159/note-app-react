@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import './Sidebar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { Note } from '../interfaces/Note';
 
 
 const Sidebar = ({ onAddNote, notes, onDeleteNote, activeNote, setActiveNote }:any) => {
+  const sortedNotes = notes.sort((a:Note, b:Note) => b.modDate - a.modDate);
 
   return (
     <div className='app-sidebar'>
       <div className="app-sidebar-header">
-        <h1>ノート</h1>
+        <h1><FontAwesomeIcon icon={faBook}></FontAwesomeIcon>oneNote</h1>
         <button onClick={onAddNote}>追加</button>
       </div>
       <div className="app-sidebar-notes">
-        {notes.map((note: any) => {
+        {sortedNotes.map((note:Note) => {
           return (
             <div
               className={`app-sidebar-note ${note.id === activeNote && "active"}`}

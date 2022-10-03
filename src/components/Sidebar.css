@@ -22,6 +22,11 @@ button {
 
 .app-sidebar-header h1 {
   margin: 0;
+  color: rgb(2, 92, 137);
+}
+
+.app-sidebar-header svg {
+  margin-right: 5px;
 }
 
 .app-sidebar-notes {
@@ -33,19 +38,34 @@ button {
   padding: 25px;
   cursor: pointer;
   transition: all 0.3s;
+  margin: 10px 0;
+  overflow: hidden;
+  max-height: 100px;
 }
 
 .sidebar-note-title {
   display: flex;
   justify-content: space-between;
+  max-height: 20px;
 }
 
-.app-sidebar-note {
-  margin: 10px 0;
+.sidebar-note-title strong {
+  max-width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.app-sidebar-note p {
+  max-width: 85%;
+  max-height: 45px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .app-sidebar-note small {
-  color: #999;
+  color: rgb(120, 119, 119);
 }
 
 .app-sidebar-note:hover {
@@ -53,5 +73,5 @@ button {
 }
 
 .app-sidebar-note.active {
-  background-color: #d3f4ea;
+  background-image: linear-gradient(90deg, rgba(57, 248, 169, 0.2), rgba(48, 97, 96, 0.1));
 }
